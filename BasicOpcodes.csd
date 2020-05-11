@@ -26,15 +26,15 @@
 		0dbfs  = 1
 
 		// http://www.csounds.com/manual/html/oscils.html
+		/**
+		* = Sine Oscillator Example =
+		* asig oscils iamp, icps, iphs [, iflg]
+		* iamp - output amplitude
+		* icps - frequency in Hz (may be zero or negative, however the absolute value must be less than sr/2).
+		* iphs - start phase between 0 and 1
+		* iflg - 2 to use double precision (improves quality but has slowdown) 
+		*/
 		instr ExSineOsc
-			/**
-			 * = Sine Oscillator Example =
-			 * asig oscils iamp, icps, iphs [, iflg]
-			 * iamp - output amplitude
-			 * icps - frequency in Hz (may be zero or negative, however the absolute value must be less than sr/2).
-			 * iphs - start phase between 0 and 1
-			 * iflg - 2 to use double precision (improves quality but has slowdown) 
-			 */
 			iamp = .3
 			icps = 2121
 			iphs = 0.21
@@ -44,22 +44,22 @@
 		endin
 
 		// http://www.csounds.com/manual/html/pluck.html
+		/**
+		* = Pluck Example =
+		* asig pluck kamp, kcps, icps, ifn, imeth [, iparm1] [, iparm2]
+		* kamp  - output amplitude
+		* kcps  - resampling frequency in cycles per second
+		* icps  - intended pitch value in hertz
+		* ifn   - table number of a stored function used to initialize the cyclic decay buffer
+		* imeth - natural decay, 1-6 as follows:
+		* 1. simple averaging. A simple smoothing process, uninfluenced by parameter values.
+		* 2. stretched averaging. As above, with smoothing time stretched by a factor of iparm1 (>=1).
+		* 3. simple drum. The range from pitch to noise is controlled by a 'roughness factor' in iparm1 (0 to 1). Zero gives the plucked string effect, while 1 reverses the polarity of every sample (octave down, odd harmonics). The setting .5 gives an optimum snare drum.
+		* 4. stretched drum. Combines both roughness and stretch factors. iparm1 is roughness (0 to 1), and iparm2 the stretch factor (>=1).
+		* 5. weighted averaging. As method 1, with iparm1 weighting the current sample (the status quo) and iparm2 weighting the previous adjacent one. iparm1 + iparm2 must be <= 1.
+		* 6. 1st order recursive filter, with coefs .5. Unaffected by parameter values.
+		*/			
 		instr ExPluck
-			/**
-			 * = Pluck Example =
-			 * asig pluck kamp, kcps, icps, ifn, imeth [, iparm1] [, iparm2]
-			 * kamp  - output amplitude
-			 * kcps  - resampling frequency in cycles per second
-			 * icps  - intended pitch value in hertz
-			 * ifn   - table number of a stored function used to initialize the cyclic decay buffer
-			 * imeth - natural decay, 1-6 as follows:
-			 * 1. simple averaging. A simple smoothing process, uninfluenced by parameter values.
-		   	 * 2. stretched averaging. As above, with smoothing time stretched by a factor of iparm1 (>=1).
-		   	 * 3. simple drum. The range from pitch to noise is controlled by a 'roughness factor' in iparm1 (0 to 1). Zero gives the plucked string effect, while 1 reverses the polarity of every sample (octave down, odd harmonics). The setting .5 gives an optimum snare drum.
-		   	 * 4. stretched drum. Combines both roughness and stretch factors. iparm1 is roughness (0 to 1), and iparm2 the stretch factor (>=1).
-		   	 * 5. weighted averaging. As method 1, with iparm1 weighting the current sample (the status quo) and iparm2 weighting the previous adjacent one. iparm1 + iparm2 must be <= 1.
-			 * 6. 1st order recursive filter, with coefs .5. Unaffected by parameter values.
-			 */	
 			kamp = 0.7
 			kcps = 220
 			icps = 220
@@ -70,16 +70,16 @@
 		endin
 
 		// http://www.csounds.com/manual/html/buzz.html
+		/**
+		* = Buzz Example =
+		* = Harmonically related sine waves =
+		* xamp - amplitude
+		* xcps - frequency in cycles per second
+		* knh  - number of harmonics requested
+		* ifn  - table number of a stored function containing a sine wave. A large table of at least 8192 points is recommended.
+		* asig buzz xamp, xcps, knh, ifn [, iphs]
+		*/
 		instr ExBuzz
-		  /**
-		   * = Buzz Example =
-		   * = Harmonically related sine waves =
-		   * xamp - amplitude
-		   * xcps - frequency in cycles per second
-		   * knh  - number of harmonics requested
-		   * ifn  - table number of a stored function containing a sine wave. A large table of at least 8192 points is recommended.
-		   * asig buzz xamp, xcps, knh, ifn [, iphs]
-		   */
 			kcps = 110
 			ifn  = 1
 			knh	line p4, p3, p5
@@ -88,16 +88,16 @@
 		endin
 
 		// http://www.csounds.com/manual/html/gbuzz.html
+		/**
+		* = Buzz Example =
+		* = Harmonically related sine waves =
+		* xamp - amplitude
+		* xcps - frequency in cycles per second
+		* knh  - number of harmonics requested
+		* ifn  - table number of a stored function containing a sine wave. A large table of at least 8192 points is recommended.
+		* asig buzz xamp, xcps, knh, ifn [, iphs]
+		*/
 		instr ExGBuzz
-		  /**
-		   * = Buzz Example =
-		   * = Harmonically related sine waves =
-		   * xamp - amplitude
-		   * xcps - frequency in cycles per second
-		   * knh  - number of harmonics requested
-		   * ifn  - table number of a stored function containing a sine wave. A large table of at least 8192 points is recommended.
-		   * asig buzz xamp, xcps, knh, ifn [, iphs]
-		   */
 			kcps = 110
 			ifn  = 1
 			knh	line p4, p3, p5
