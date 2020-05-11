@@ -9,16 +9,16 @@
 	<CsInstruments>
 
 		/**
-		 * Many of the examples here are taken from http://www.csounds.com/manual/html/oscils.html
-		 * This is intended as a learning exercise and reference guide. Still learning for a good
-		 * coding style, so expect a lot of poor documentation here.
-		 *
-		 * I'm excluding loscil here as it uses an external file and deserves
-		 * a dedicated example.  Grain also seems a bit complicated as it uses function tables.
-		 *
-		 * @author: Olin Gallet
-		 * @date:   11 May 2020
-		 */
+		* Many of the examples here are taken from http://www.csounds.com/manual/html/oscils.html
+		* This is intended as a learning exercise and reference guide. Still learning for a good
+		* coding style, so expect a lot of poor documentation here.
+		*
+		* I'm excluding loscil here as it uses an external file and deserves
+		* a dedicated example.  Grain also seems a bit complicated as it uses function tables.
+		*
+		* @author: Olin Gallet
+		* @date:   11 May 2020
+		*/
 
 		sr = 44100 ; sampling rate
 		ksmps = 32
